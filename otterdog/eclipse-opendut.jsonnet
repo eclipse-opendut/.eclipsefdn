@@ -30,7 +30,6 @@ orgs.newOrg('eclipse-opendut') {
       topics+: [
         "automotive",
       ],
-      default_branch: "main",
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
