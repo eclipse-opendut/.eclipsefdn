@@ -21,7 +21,6 @@ orgs.newOrg('eclipse-opendut') {
   _repositories+:: [
     orgs.newRepo('opendut') {
       description: "Test Electronic Control Units around the world in a transparent network.",
-      private: true,
       has_projects: false,
       has_wiki: false,
       allow_merge_commit: true,
