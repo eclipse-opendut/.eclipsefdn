@@ -30,7 +30,7 @@ orgs.newOrg('eclipse-opendut') {
           value: '["ubuntu-latest"]',
         },
         orgs.newRepoVariable('OPENDUT_RUN_TESTENV') {
-          value: false,
+          value: "false",
         },
       ],
       topics+: [
