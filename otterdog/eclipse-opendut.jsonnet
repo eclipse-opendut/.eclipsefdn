@@ -21,8 +21,6 @@ orgs.newOrg('eclipse-opendut') {
       has_projects: true,
       has_discussions: true,
       has_wiki: false,
-      allow_merge_commit: true,
-      allow_update_branch: false,
       delete_branch_on_merge: false,
       variables+: [
         orgs.newRepoVariable('OPENDUT_GH_RUNNER_SMALL') {
@@ -51,8 +49,6 @@ orgs.newOrg('eclipse-opendut') {
       },
     },
     orgs.newRepo('.github') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       workflows+: {
