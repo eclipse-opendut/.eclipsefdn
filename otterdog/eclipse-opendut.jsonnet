@@ -5,7 +5,7 @@ orgs.newOrg('eclipse-opendut') {
     dependabot_security_updates_enabled_for_new_repositories: false,
     description: "Test Electronic Control Units around the world in a transparent network.",
     members_can_change_project_visibility: false,
-    name: "Eclipse Opendut Project",
+    name: "Eclipse openDuT",
     packages_containers_internal: false,
     packages_containers_public: false,
     readers_can_create_discussions: true,
