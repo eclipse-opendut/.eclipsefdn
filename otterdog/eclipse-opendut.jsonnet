@@ -24,6 +24,14 @@ orgs.newOrg('eclipse-opendut') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      variables+: [
+        orgs.newRepoVariable('OPENDUT_GH_RUNNER_SMALL') {
+          value: '["ubuntu-latest"]',
+        },
+        orgs.newRepoVariable('OPENDUT_GH_RUNNER_LARGE') {
+          value: '["ubuntu-latest"]',
+        },
+      ],
       topics+: [
         "automotive",
       ],
