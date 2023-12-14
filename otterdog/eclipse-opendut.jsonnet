@@ -31,6 +31,9 @@ orgs.newOrg('eclipse-opendut') {
         orgs.newRepoVariable('OPENDUT_GH_RUNNER_LARGE') {
           value: '["ubuntu-latest"]',
         },
+        orgs.newRepoVariable('OPENDUT_RUN_TESTENV') {
+          value: false,
+        },
       ],
       topics+: [
         "automotive",
