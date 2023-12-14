@@ -39,8 +39,10 @@ orgs.newOrg('eclipse-opendut') {
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
+          required_status_checks: [
+            "build",
+          ],
           requires_conversation_resolution: true,
-          requires_status_checks: false,
         },
       ],
       web_commit_signoff_required: false,
