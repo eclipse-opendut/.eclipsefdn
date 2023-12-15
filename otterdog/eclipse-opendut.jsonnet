@@ -44,6 +44,11 @@ orgs.newOrg('eclipse-opendut') {
           ],
           requires_conversation_resolution: true,
         },
+        orgs.newBranchProtectionRule('development') {
+          allows_force_pushes: true,
+          required_approving_review_count: 0,
+          requires_pull_request: false,
+        },
       ],
       web_commit_signoff_required: false,
       workflows+: {
