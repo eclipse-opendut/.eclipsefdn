@@ -44,11 +44,20 @@ orgs.newOrg('eclipse-opendut') {
           ],
           requires_conversation_resolution: true,
         },
-        orgs.newBranchProtectionRule('development') {
+      ],
+      rulesets: [
+        orgs.newRepoRuleset('protect-development-branch') {
+          allows_updates: true,
           allows_force_pushes: true,
-          required_approving_review_count: null,
+          include_refs+: [
+            "refs/heads/development",
+          ],
           requires_pull_request: false,
-        },
+          required_approving_review_count: null,
+          required_status_checks+: [
+            "build"
+          ],
+        }
       ],
       web_commit_signoff_required: false,
       workflows+: {
