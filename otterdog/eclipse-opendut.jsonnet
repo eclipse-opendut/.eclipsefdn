@@ -57,6 +57,7 @@ orgs.newOrg('eclipse-opendut') {
           required_status_checks+: [
             "build"
           ],
+          requires_commit_signatures: false,
         }
       ],
       web_commit_signoff_required: false,
