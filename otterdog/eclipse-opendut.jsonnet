@@ -40,13 +40,14 @@ orgs.newOrg('eclipse-opendut') {
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: 1,
           required_status_checks: [
+            "eclipse-eca-validation:eclipsefdn/eca",
             "build",
           ],
           requires_conversation_resolution: true,
         },
         orgs.newBranchProtectionRule('development') {
           allows_force_pushes: true,
-          required_approving_review_count: 0,
+          required_approving_review_count: null,
           requires_pull_request: false,
         },
       ],
