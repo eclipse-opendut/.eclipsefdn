@@ -18,7 +18,6 @@ orgs.newOrg('eclipse-opendut') {
   _repositories+:: [
     orgs.newRepo('opendut') {
       description: "Test Electronic Control Units around the world in a transparent network.",
-      has_projects: true,
       has_discussions: true,
       has_wiki: false,
       delete_branch_on_merge: false,
@@ -44,11 +43,21 @@ orgs.newOrg('eclipse-opendut') {
           ],
           requires_conversation_resolution: true,
         },
-        orgs.newBranchProtectionRule('development') {
+      ],
+      rulesets: [
+        orgs.newRepoRuleset('protect-development-branch') {
+          allows_updates: true,
           allows_force_pushes: true,
-          required_approving_review_count: null,
+          include_refs+: [
+            "refs/heads/development",
+          ],
           requires_pull_request: false,
-        },
+          required_approving_review_count: null,
+          required_status_checks+: [
+            "build"
+          ],
+          requires_commit_signatures: false,
+        }
       ],
       web_commit_signoff_required: false,
       workflows+: {
