@@ -76,14 +76,14 @@ orgs.newOrg('eclipse-opendut') {
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
       },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
     },
-    environments: [
-      orgs.newEnvironment('github-pages') {
-        branch_policies+: [
-          "main"
-        ],
-        deployment_branch_policy: "selected",
-      },
-    ],
   ],
 }
