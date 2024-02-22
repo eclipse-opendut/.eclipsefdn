@@ -67,5 +67,23 @@ orgs.newOrg('eclipse-opendut') {
         actions_can_approve_pull_request_reviews: false,
       },
     },
+    orgs.newRepo('eclipse-opendut.github.io') {
+      delete_branch_on_merge: false,
+      web_commit_signoff_required: false,
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "main",
+      gh_pages_source_path: "/",
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+      },
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "main"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    },
   ],
 }
