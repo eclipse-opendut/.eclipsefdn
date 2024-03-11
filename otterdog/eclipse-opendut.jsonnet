@@ -13,76 +13,66 @@ orgs.newOrg('eclipse-opendut') {
     },
   },
   _repositories+:: [
-    orgs.newRepo('opendut') {
-      description: "Test Electronic Control Units around the world in a transparent network.",
-      homepage: "https://opendut.eclipse.dev/",
-      has_discussions: true,
-      has_wiki: false,
-      delete_branch_on_merge: false,
-      variables+: [
-        orgs.newRepoVariable('OPENDUT_GH_RUNNER_SMALL') {
-          value: '["ubuntu-latest"]',
-        },
-        orgs.newRepoVariable('OPENDUT_GH_RUNNER_LARGE') {
-          value: '["ubuntu-latest"]',
-        },
-        orgs.newRepoVariable('OPENDUT_RUN_TESTENV') {
-          value: "false",
-        },
-      ],
-      topics+: [
-        "automotive",
-      ],
-      branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: 1,
-          required_status_checks+: [
-            "status-check",
-          ],
-          requires_conversation_resolution: true,
-        },
-      ],
-      rulesets: [
-        orgs.newRepoRuleset('protect-development-branch') {
-          allows_updates: true,
-          allows_force_pushes: true,
-          include_refs+: [
-            "refs/heads/development",
-          ],
-          requires_pull_request: false,
-          required_approving_review_count: null,
-          requires_status_checks: false,
-          required_status_checks: [],
-          requires_commit_signatures: false,
-        }
-      ],
-      web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
-    },
     orgs.newRepo('.github') {
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
     },
     orgs.newRepo('eclipse-opendut.github.io') {
       delete_branch_on_merge: false,
-      web_commit_signoff_required: false,
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
-      workflows+: {
-        actions_can_approve_pull_request_reviews: false,
-      },
+      web_commit_signoff_required: false,
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
             "main"
           ],
           deployment_branch_policy: "selected",
+        },
+      ],
+    },
+    orgs.newRepo('opendut') {
+      delete_branch_on_merge: false,
+      description: "Test Electronic Control Units around the world in a transparent network.",
+      has_discussions: true,
+      has_wiki: false,
+      homepage: "https://opendut.eclipse.dev/",
+      topics+: [
+        "automotive"
+      ],
+      web_commit_signoff_required: false,
+      variables: [
+        orgs.newRepoVariable('OPENDUT_GH_RUNNER_LARGE') {
+          value: "[\"ubuntu-latest\"]",
+        },
+        orgs.newRepoVariable('OPENDUT_GH_RUNNER_SMALL') {
+          value: "[\"ubuntu-latest\"]",
+        },
+        orgs.newRepoVariable('OPENDUT_RUN_TESTENV') {
+          value: "false",
+        },
+      ],
+      branch_protection_rules: [
+        orgs.newBranchProtectionRule('main') {
+          required_approving_review_count: 1,
+          required_status_checks+: [
+            "status-check"
+          ],
+          requires_conversation_resolution: true,
+        },
+      ],
+      rulesets: [
+        orgs.newRepoRuleset('protect-development-branch') {
+          allows_force_pushes: true,
+          allows_updates: true,
+          include_refs+: [
+            "refs/heads/development"
+          ],
+          required_approving_review_count: null,
+          requires_commit_signatures: false,
+          requires_pull_request: false,
+          requires_status_checks: false,
         },
       ],
     },
