@@ -37,9 +37,7 @@ orgs.newOrg('eclipse-opendut') {
       has_discussions: true,
       has_wiki: false,
       homepage: "https://opendut.eclipse.dev/",
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "github-pages",
-      gh_pages_source_path: "/",
+      gh_pages_build_type: "workflow",
       topics+: [
         "automotive"
       ],
@@ -80,7 +78,11 @@ orgs.newOrg('eclipse-opendut') {
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
-            "github-pages"
+            "main",
+            "development",
+             "v[0-9].[0-9].[0-9]",
+             "v[0-9].[0-9].[0-9]-*",
+             "canary"
           ],
           deployment_branch_policy: "selected",
         },
