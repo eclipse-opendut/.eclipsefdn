@@ -81,8 +81,7 @@ orgs.newOrg('eclipse-opendut') {
             "main",
             "development",
              "v[0-9].[0-9].[0-9]",
-             "v[0-9].[0-9].[0-9]-*",
-             "canary"
+             "v[0-9].[0-9].[0-9]-*"
           ],
           deployment_branch_policy: "selected",
         },
