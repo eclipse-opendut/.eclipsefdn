@@ -16,21 +16,6 @@ orgs.newOrg('eclipse-opendut') {
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
     },
-    orgs.newRepo('eclipse-opendut.github.io') {
-      delete_branch_on_merge: false,
-      gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "main",
-      gh_pages_source_path: "/",
-      web_commit_signoff_required: false,
-      environments: [
-        orgs.newEnvironment('github-pages') {
-          branch_policies+: [
-            "main"
-          ],
-          deployment_branch_policy: "selected",
-        },
-      ],
-    },
     orgs.newRepo('opendut') {
       delete_branch_on_merge: false,
       description: "Test Electronic Control Units around the world in a transparent network.",
