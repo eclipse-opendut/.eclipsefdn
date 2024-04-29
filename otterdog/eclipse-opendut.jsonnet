@@ -21,7 +21,7 @@ orgs.newOrg('eclipse-opendut') {
       description: "Test Electronic Control Units around the world in a transparent network.",
       has_discussions: true,
       has_wiki: false,
-      homepage: "https://opendut.eclipse.dev/",
+      homepage: "https://opendut.eclipse.dev",
       gh_pages_build_type: "workflow",
       topics+: [
         "automotive"
@@ -71,6 +71,13 @@ orgs.newOrg('eclipse-opendut') {
           deployment_branch_policy: "selected",
         },
       ],
+    },
+    orgs.newRepo('cannelloni') {
+      delete_branch_on_merge: false,
+      web_commit_signoff_required: false,
+      description: "Build cannelloni for multiple architectures.",
+      has_wiki: false,
+      homepage: "https://github.com/mguentner/cannelloni",
     },
   ],
 }
