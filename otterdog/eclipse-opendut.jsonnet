@@ -71,6 +71,7 @@ orgs.newOrg('eclipse-opendut') {
       ],
     },
     orgs.newRepo('cannelloni') {
+      name: "cannelloni-build",
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       description: "Build cannelloni for multiple architectures.",
