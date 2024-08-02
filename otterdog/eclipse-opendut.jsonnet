@@ -78,5 +78,12 @@ orgs.newOrg('eclipse-opendut') {
       has_wiki: false,
       homepage: "https://github.com/mguentner/cannelloni",
     },
+    orgs.newRepo('rperf-build') {
+      delete_branch_on_merge: false,
+      web_commit_signoff_required: false,
+      description: "Build rperf for multiple architectures.",
+      has_wiki: false,
+      homepage: "https://github.com/opensource-3d-p/rperf",
+    },
   ],
 }
