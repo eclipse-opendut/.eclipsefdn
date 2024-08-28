@@ -78,6 +78,22 @@ orgs.newOrg('eclipse-opendut') {
       has_wiki: false,
       homepage: "https://github.com/mguentner/cannelloni",
     },
+    orgs.newRepo('netbird-fork') {
+      delete_branch_on_merge: false,
+      web_commit_signoff_required: false,
+      description: "Netbird with adjustments for openDuT.",
+      forked_repository: "https://github.com/netbirdio/netbird",
+      fork_default_branch_only: true,
+      has_wiki: false,
+      homepage: "https://netbird.io",
+    },
+    orgs.newRepo('netbird-build') {
+      delete_branch_on_merge: false,
+      web_commit_signoff_required: false,
+      description: "Build Netbird for multiple architectures.",
+      has_wiki: false,
+      homepage: "https://netbird.io",
+    },
     orgs.newRepo('rperf-build') {
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
