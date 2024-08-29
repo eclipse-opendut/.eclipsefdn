@@ -82,7 +82,7 @@ orgs.newOrg('eclipse-opendut') {
       delete_branch_on_merge: false,
       web_commit_signoff_required: false,
       description: "Netbird with adjustments for openDuT.",
-      forked_repository: "https://github.com/netbirdio/netbird",
+      forked_repository: "netbirdio/netbird",
       fork_default_branch_only: true,
       has_wiki: false,
       homepage: "https://netbird.io",
