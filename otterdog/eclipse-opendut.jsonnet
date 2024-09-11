@@ -63,6 +63,8 @@ orgs.newOrg('eclipse-opendut') {
           branch_policies+: [
             "main",
             "development",
+            "tag:v[0-9].[0-9].[0-9]",
+            "tag:v[0-9].[0-9].[0-9]-*",
           ],
           deployment_branch_policy: "selected",
         },
