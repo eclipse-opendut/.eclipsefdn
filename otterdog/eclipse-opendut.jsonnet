@@ -48,13 +48,10 @@ orgs.newOrg('eclipse-opendut') {
       rulesets: [
         orgs.newRepoRuleset('protect-development-branch') {
           allows_force_pushes: true,
-          allows_updates: true,
           include_refs+: [
             "refs/heads/development"
           ],
-          required_approving_review_count: null,
-          requires_commit_signatures: false,
-          requires_pull_request: false,
+          required_pull_request: null,
           requires_status_checks: false,
         },
       ],
