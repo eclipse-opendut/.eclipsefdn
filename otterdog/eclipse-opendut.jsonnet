@@ -52,7 +52,7 @@ orgs.newOrg('eclipse-opendut') {
             "refs/heads/development"
           ],
           required_pull_request: null,
-          requires_status_checks: false,
+          required_status_checks: null,
         },
       ],
       environments: [
