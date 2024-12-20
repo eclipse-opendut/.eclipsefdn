@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-opendut') {
+orgs.newOrg('automotive.opendut', 'eclipse-opendut') {
   settings+: {
     description: "Test Electronic Control Units around the world in a transparent network.",
     name: "Eclipse openDuT",
