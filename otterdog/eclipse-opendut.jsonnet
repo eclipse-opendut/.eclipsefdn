@@ -67,6 +67,15 @@ orgs.newOrg('automotive.opendut', 'eclipse-opendut') {
         },
       ],
     },
+    orgs.newRepo('raspberry-pi-wireless-bootstrap') {
+      delete_branch_on_merge: false,
+      description: "Easily configure your Raspberry Pi from scratch via WiFi hotspot.",
+      has_wiki: false,
+      topics+: [
+        "raspberry-pi"
+      ],
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('cannelloni-build') {
       aliases: ["cannelloni"],
       delete_branch_on_merge: false,
